@@ -33,10 +33,19 @@ html {
 body {
     font-family: 'Open Sans';
     background-color: #FFF1F8;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 17px;
 }
 
 button {
     cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
@@ -49,6 +58,8 @@ button {
     padding: 28px 0;
     background: #FFFFFF;
     box-shadow: 0px 1px 20px rgba(72, 3, 38, 0.07);
+    position: relative;
+    z-index: 1;
 }
 
 .header__container {
@@ -83,7 +94,11 @@ button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 36px;
+    margin-right: 20px;
+}
 
+.header__button-gender:last-child {
+    margin-right: 0;
 }
 
 .header__button-gender_men {
@@ -92,4 +107,78 @@ button {
 
 .header__button-gender_women {
     background-image: url(../img/women.svg);
+}
+
+.main {
+    flex-grow: 1;
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+}
+
+.main__container {
+    display: flex;
+}
+
+.card__wrapper {
+    position: relative;
+    margin: auto;
+    display: flex;
+    box-shadow: 0px 0px 50px rgba(96, 4, 50, 0.23);
+    font-size: 3px;
+}
+
+.card__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
+    font-family: 'Bad Script';
+    line-height: 1.6;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3px;
+}
+
+.footer__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
+}
+
+.footer__social-wrapper {
+    display: flex;
+    gap: 16px;
+}
+
+@media (max-width: 880px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .header__button-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .header__button-change {
+        width: 220px;
+        height: 45px;
+        font-size: 14px;
+        margin-right: 0;
+    }
+
+    .header__button-gender {
+        width: 40px;
+        height: 40px;
+        background-size: 30px;
+        margin-right: 0;
+    }
 }
