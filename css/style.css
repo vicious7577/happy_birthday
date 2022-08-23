@@ -36,7 +36,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-bottom: 17px;
+}
+
+.women {
+    background-color: #FFF1F8;
+}
+
+.men {
+    background-color: #EFF9FE;
 }
 
 button {
@@ -46,6 +53,12 @@ button {
 img {
     max-width: 100%;
     height: auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .container {
@@ -66,6 +79,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
 }
 
 .header__button-change {
@@ -79,6 +93,11 @@ img {
     color: #FFFFFF;
     margin-right: 30px;
 }
+
+.men .header__button-change {
+    background-color: #1178B2;
+}
+
 
 .header__button-change:last-child {
     margin-right: 0;
@@ -97,6 +116,7 @@ img {
     margin-right: 20px;
 }
 
+
 .header__button-gender:last-child {
     margin-right: 0;
 }
@@ -109,9 +129,17 @@ img {
     background-image: url(../img/women.svg);
 }
 
+.men .header__button-gender_men {
+    border-color: #1178B2;
+}
+
+.women .header__button-gender_women {
+    border-color: #C300C7;
+}
+
 .main {
     flex-grow: 1;
-    padding: 32px 0;
+    padding: 32px 0 15px;
     display: flex;
     align-items: center;
 }
@@ -138,23 +166,42 @@ img {
     line-height: 1.6;
 }
 
+.woomen .card__text {
+    font-family: 'Bad Script';
+}
+
+.men .card__text {
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+.footer {
+    padding: 17px 0;
+}
+
 .footer__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 3px;
 }
 
 .footer__text-wrapper {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
-    font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
 }
 
-.footer__social-wrapper {
+.footer__social {
     display: flex;
     gap: 16px;
+}
+
+.men .social__icon {
+    fill: #5273C8;
+}
+
+.women .social__icon {
+    fill: #C300C7;
 }
 
 @media (max-width: 880px) {
@@ -180,5 +227,16 @@ img {
         height: 40px;
         background-size: 30px;
         margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer__text-wrapper {
+        order: 1;
     }
 }
